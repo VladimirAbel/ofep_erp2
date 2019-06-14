@@ -7,6 +7,7 @@
  *  ISSUE            FECHA:		      AUTOR                 DESCRIPCION
  # 0              29-06-2010        RCM KPLIAN        Creacion
  * 101            12/06/2018        RAC KPLIAN        Adciona ordenacion dinamica   
+ * #74		  16/05/2019	    RCM 	      Acrtualizacion PHP 7 problema Count
 ***************************************************************************/
 class CTParametro{
 	
@@ -505,7 +506,7 @@ class CTParametro{
 		        
 		    
 			//decodifica filtro JSON usado en grillas
-			
+		if(isset($filter)) { //74			
 			for ($i=0;$i<count($filter);$i++){
 				switch($filter[$i]['type']){
 
@@ -566,6 +567,7 @@ class CTParametro{
 						Break;
 				}
 			}
+		   }//#74
 			$where .= $qs;
 		}
 		else{
