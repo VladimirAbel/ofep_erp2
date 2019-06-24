@@ -3865,3 +3865,9 @@ select pxp.f_insert_trol ('PXP-Rol inicial', 'PXP-Rol inicial', 'PXP');
 
 
 
+/***********************************I-DAT-MZM-SEGU-2-19/06/2019****************************************/
+select pxp.f_add_catalog('SEGU','tpersona__tipo_documento','Documento Identidad','documento_identidad','');
+select pxp.f_add_catalog('SEGU','tpersona__tipo_documento','Pasaporte','pasaporte','');
+select pxp.f_add_catalog('SEGU','tpersona__tipo_documento','Ninguno','ninguno','');
+
+/***********************************F-DAT-MZM-SEGU-2-19/06/2019****************************************/

@@ -116,11 +116,11 @@ Phx.vista.persona=Ext.extend(Phx.gridInterfaz,{
 		grid:true,
 		form:false
 	},
-	{
+	/*{
 	       		config:{
 	       			name:'tipo_documento',
 	       			fieldLabel:'Tipo Documento',
-	       			allowBlank:true,
+	       			allowBlank:false,
 	       			emptyText:'Tipo Doc...',
 	       			
 	       			typeAhead: true,
@@ -139,7 +139,34 @@ Phx.vista.persona=Ext.extend(Phx.gridInterfaz,{
 	       		grid:true,
 	       		valorInicial:'documento_identidad',
 	       		form:true
-	       	},
+	       	},*/
+	       	
+	    {
+			config: {
+				name: 'tipo_documento',
+				fieldLabel: 'Tipo Documento',
+				anchor: '95%',
+				tinit: false,
+				allowBlank: false,
+				origen: 'CATALOGO',
+				gdisplayField: 'tipo_documento',
+				hiddenName: 'tipo_documento',
+				gwidth: 55,
+				baseParams:{
+						cod_subsistema:'SEGU',
+						catalogo_tipo:'tpersona__tipo_documento'
+				},
+				valueField: 'codigo'
+			},
+			type: 'ComboRec',
+			id_grupo: 0,
+			filters:{pfiltro:'tipo_documento',type:'string'},
+			grid: true,
+			form: true
+		},   	
+	       	
+	       	
+	       	
 	 {
 		config:{
 			fieldLabel: "CI",

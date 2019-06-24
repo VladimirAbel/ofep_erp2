@@ -5,8 +5,9 @@
 *@author  (admin)
 *@date 14-01-2014 19:23:02
 *@description Clase que envia los parametros requeridos a la Base de datos para la ejecucion de las funciones, y que recibe la respuesta del resultado de la ejecucion de las mismas
- ISSUE              FECHA:	        AUTOR:           DESCRIPCION:	
- #18                23/05/2019      EGS              se agrego el campo considerar_planilla 
+ ISSUE      EMPRESA        FECHA:	        AUTOR:           DESCRIPCION:	
+ #18                	  23/05/2019        EGS              se agrego el campo considerar_planilla 
+ #2			OFEP   		  19/06/2019		MZM				 Adicion de campo indefinido
 */
 
 class MODTipoContrato extends MODbase{
@@ -32,7 +33,8 @@ class MODTipoContrato extends MODbase{
 		$this->captura('id_usuario_mod','int4');
 		$this->captura('usr_reg','varchar');
 		$this->captura('usr_mod','varchar');
-		$this->captura('considerar_planilla','varchar');//#18		
+		$this->captura('considerar_planilla','varchar');//#18	
+		$this->captura('indefinido','varchar');//#2			
 		//Ejecuta la instruccion
 		$this->armarConsulta();
 		$this->ejecutarConsulta();
@@ -52,7 +54,7 @@ class MODTipoContrato extends MODbase{
 		$this->setParametro('nombre','nombre','varchar');
 		$this->setParametro('estado_reg','estado_reg','varchar');
 		$this->setParametro('considerar_planilla','considerar_planilla','varchar');//#18
-		
+		$this->setParametro('indefinido','indefinido','varchar');//#2
 		//Ejecuta la instruccion
 		$this->armarConsulta();
 		$this->ejecutarConsulta();
@@ -73,7 +75,7 @@ class MODTipoContrato extends MODbase{
 		$this->setParametro('nombre','nombre','varchar');
 		$this->setParametro('estado_reg','estado_reg','varchar');
 		$this->setParametro('considerar_planilla','considerar_planilla','varchar');//#18
-
+		$this->setParametro('indefinido','indefinido','varchar');//#2
 		//Ejecuta la instruccion
 		$this->armarConsulta();
 		$this->ejecutarConsulta();

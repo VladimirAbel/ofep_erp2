@@ -6,8 +6,9 @@
 *@date 14-01-2014 19:23:02
 *@description Archivo con la interfaz de usuario que permite la ejecucion de todas las funcionalidades del sistema
 
-  ISSUE              FECHA:	        AUTOR:           DESCRIPCION:	
- #18                23/05/2019      EGS              se agrego el campo considerar_planilla 
+  ISSUE     EMPRESA         FECHA:	        AUTOR:           DESCRIPCION:	
+ #18                	   23/05/2019       EGS              se agrego el campo considerar_planilla
+ #2			OFEP	       19/06/2019		MZM				 Adicion de campo indefinido 
  * */
 
 header("content-type: text/javascript; charset=UTF-8");
@@ -68,6 +69,31 @@ Phx.vista.TipoContrato=Ext.extend(Phx.gridInterfaz,{
                 config:{
                        name:'considerar_planilla',
                        fieldLabel:'Considera Planilla',
+                       allowBlank:false,
+                       emptyText:'...',
+                       typeAhead: true,
+                       triggerAction: 'all',
+                       lazyRender:true,
+                       mode: 'local',                       
+                       gwidth: 100,
+                       store:new Ext.data.ArrayStore({
+                    fields: ['ID', 'valor'],
+                    data :    [['no','no'],    
+                            ['si','si']]
+                                
+                    }),
+                    valueField:'ID',
+                    displayField:'valor',
+                   },
+                   type:'ComboBox',
+                   valorInicial: 'no',
+                   id_grupo:0,                   
+                   grid:true,
+                   form:true
+         },{	//#2
+                config:{
+                       name:'indefinido',
+                       fieldLabel:'Ctto Indefinido',
                        allowBlank:false,
                        emptyText:'...',
                        typeAhead: true,
@@ -186,7 +212,7 @@ Phx.vista.TipoContrato=Ext.extend(Phx.gridInterfaz,{
 		{name:'usr_reg', type: 'string'},
 		{name:'usr_mod', type: 'string'},
 		{name:'considerar_planilla', type: 'string'},//#18
-		
+		{name:'indefinido', type: 'string'},//#2
 	],
 	sortInfo:{
 		field: 'id_tipo_contrato',
