@@ -14,10 +14,13 @@ Phx.vista.Aprobador=Ext.extend(Phx.gridInterfaz,{
 
 	constructor:function(config){
 		this.maestro=config.maestro;
+		
+		
     	//llama al constructor de la clase padre
 		Phx.vista.Aprobador.superclass.constructor.call(this,config);
 		this.init();
-		this.load({params:{start:0, limit:50}})
+		this.load({params:{start:0, limit:50}});
+		this.iniciarEventos();
 	},
 			
 	Atributos:[
@@ -378,7 +381,17 @@ Phx.vista.Aprobador=Ext.extend(Phx.gridInterfaz,{
 		direction: 'ASC'
 	},
 	bdel:true,
-	bsave:true
+	bsave:true,
+	iniciarEventos: function(){
+		this.Cmp.id_subsistema.on('select', function(cmp, rec, indice){
+			  this.Cmp.id_proceso_macro.reset();
+			  console.log(rec)
+			  this.Cmp.id_proceso_macro.store.baseParams.codigo_subsistema = rec.data.codigo;
+			  this.Cmp.id_proceso_macro.modificado = true; 
+			
+		},this);
+		
+	}
 	}
 )
 </script>
