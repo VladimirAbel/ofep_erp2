@@ -5,6 +5,11 @@
 *@author  (rac)
 *@date 29-08-2011 09:19:28
 *@description Archivo con la interfaz de usuario que permite la ejecucion de todas las funcionalidades del sistema
+
+¨*****************************************************************************************
+ISSUE 	SIS 	EMPRESA 	FECHA 		AUTOR 		DESCRIPCION
+#5 		PARAM 	OFEP 		05/07/2019	RCM 		Error en interfaz por problema en carga de google maps
+¨*****************************************************************************************
 */
 
 header("content-type: text/javascript; charset=UTF-8");
@@ -16,16 +21,16 @@ Phx.vista.Lugar=Ext.extend(Phx.arbInterfaz,{
 		this.maestro=config.maestro;
     	//llama al constructor de la clase padre
 		Phx.vista.Lugar.superclass.constructor.call(this,config);
-		
+
 		this.init();
-		
+
 		//de inicio bloqueamos el botono nuevo
 		//this.tbar.items.get('b-new-'+this.idContenedor).enable()
 		//this.init();
 		//this.loaderTree.baseParams={id_subsistema:this.id_subsistema};
 		//this.load({params:{start:0, limit:50}})
 	},
-			
+
 	Atributos:[
 		{
 			//configuracion del componente
@@ -35,14 +40,14 @@ Phx.vista.Lugar=Ext.extend(Phx.arbInterfaz,{
 					name: 'id_lugar'
 			},
 			type:'Field',
-			form:true 
+			form:true
 		},
 		{
 			config:{
 				labelSeparator:'',
 				inputType:'hidden',
 				name: 'id_lugar_fk'
-				
+
 			},
 			type:'Field',
 			form:true
@@ -58,7 +63,7 @@ Phx.vista.Lugar=Ext.extend(Phx.arbInterfaz,{
 				disabled:true
 			},
 			type:'TextField',
-			
+
 			filters:{pfiltro:'lug.codigo',type:'string'},
 			id_grupo:1,
 			grid:true,
@@ -119,7 +124,7 @@ Phx.vista.Lugar=Ext.extend(Phx.arbInterfaz,{
 	       		    lazyRender:true,
 	       		    mode: 'local',
 	       		    store:['si','no']
-	       		    
+
 	       		},
 	       		type:'ComboBox',
 	       		id_grupo:0,
@@ -135,7 +140,7 @@ Phx.vista.Lugar=Ext.extend(Phx.arbInterfaz,{
 	       		    lazyRender:true,
 	       		    mode: 'local',
 	       		    store:['si','no']
-	       		    
+
 	       		},
 	       		type:'ComboBox',
 	       		id_grupo:0,
@@ -151,7 +156,7 @@ Phx.vista.Lugar=Ext.extend(Phx.arbInterfaz,{
 	       		    lazyRender:true,
 	       		    mode: 'local',
 	       		    store:['pais','departamento', 'ciudad','provincia', 'localidad','Barrio']
-	       		    
+
 	       		},
 	       		type:'ComboBox',
 	       		id_grupo:0,
@@ -167,7 +172,7 @@ Phx.vista.Lugar=Ext.extend(Phx.arbInterfaz,{
 	       		    lazyRender:true,
 	       		    mode: 'local',
 	       		    store:['si','no']
-	       		    
+
 	       		},
 	       		type:'ComboBox',
 	       		id_grupo:0,
@@ -199,9 +204,9 @@ Phx.vista.Lugar=Ext.extend(Phx.arbInterfaz,{
 			},
 			type:'TextField',
 			id_grupo:1,
-			
+
 			form:false
-		}		
+		}
 	],
 	title:'Lugar',
 	ActSave:'../../sis_parametros/control/Lugar/insertarLugar',
@@ -220,7 +225,7 @@ Phx.vista.Lugar=Ext.extend(Phx.arbInterfaz,{
 		{name:'codigo', type: 'string'},
 		{name:'es_regional', type: 'string'},
 		{name:'estado_reg', type: 'string'},
-		
+
 		{name:'nombre', type: 'string'},
 		{name:'sw_impuesto', type: 'string'},
 		{name:'sw_municipio', type: 'string'},
@@ -231,16 +236,16 @@ Phx.vista.Lugar=Ext.extend(Phx.arbInterfaz,{
 		{name:'id_usuario_mod', type: 'numeric'},
 		{name:'usr_reg', type: 'string'},
 		{name:'usr_mod', type: 'string'},
-		
+
 	],
-		
-	east:{
+	//#5 Inicio: se comenta la carga de la pestaña hijo por problems en la carga de google maps
+	/*east:{
 		  url:'../../../sis_parametros/vista/lugar/mapaLugar.php',
-		  title:'Ubicacion Lugar', 
+		  title:'Ubicacion Lugar',
 		  width:'50%',
 		  cls:'mapaLugar'
-		 },
-	
+		 },*/
+	//#5 Fin
 	sortInfo:{
 		field: 'id_lugar',
 		direction: 'ASC'
@@ -251,40 +256,40 @@ Phx.vista.Lugar=Ext.extend(Phx.arbInterfaz,{
 	//sobrecarga prepara menu
 	preparaMenu:function(n){
 			//si es una nodo tipo carpeta habilitamos la opcion de nuevo
-							
+
 			if(n.attributes.tipo_nodo == 'hijo' || n.attributes.tipo_nodo == 'raiz' || n.attributes.id == 'id'){
 					this.tbar.items.get('b-new-'+this.idContenedor).enable()
 				}
 				else {
 					this.tbar.items.get('b-new-'+this.idContenedor).disable()
-				}			
+				}
 			// llamada funcion clace padre
 			Phx.vista.Lugar.superclass.preparaMenu.call(this,n)
 		},
-		
+
 	EnableSelect:function(n){
 	    var nivel = n.getDepth();
 		var direc = this.getNombrePadre(n)
 		if(direc){
-			Phx.CP.getPagina(this.idContenedor+'-east').ubicarPos(direc,nivel)
+			//Phx.CP.getPagina(this.idContenedor+'-east').ubicarPos(direc,nivel) //#5 línea comentada por no cargar google maps
 			Phx.vista.Lugar.superclass.EnableSelect.call(this,n)
 		}
-		
+
 	},
-	
+
 	getNombrePadre:function(n){
-		var direc 
-		
-		
+		var direc
+
+
 		var padre = n.parentNode;
-		
-		
+
+
 		if(padre){
 			if(padre.attributes.id!='id'){
 			   direc = n.attributes.nombre +' - '+ this.getNombrePadre(padre)
 			   return direc;
 			}else{
-				
+
 				return n.attributes.nombre;
 			}
 		}
@@ -292,13 +297,12 @@ Phx.vista.Lugar=Ext.extend(Phx.arbInterfaz,{
 				return undefined;
 		}
 
-		
+
 	 }
-		
+
 
 
 	}
 )
 </script>
-		
-		
+
