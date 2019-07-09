@@ -439,13 +439,13 @@ tabEnter:true,
           title:'EP\'', 
           width:400,
           cls:'UsuarioGrupoEp'    
-          },
-        {
+          } /*,
+       {
             url:'../../../sis_seguridad/vista/usuario_externo/UsuarioExterno.php',
             title:'Usuario Externo',
             width:400,
             cls:'UsuarioExterno'
-        }
+        }*/
 
         ]
 	

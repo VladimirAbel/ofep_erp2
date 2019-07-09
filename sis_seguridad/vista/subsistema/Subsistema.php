@@ -178,8 +178,8 @@ Phx.vista.Subsistema=Ext.extend(Phx.gridInterfaz,{
         				});
         ///#1	EGS		03/12/2018
         
-        this.addButton('testb',{text:'test',iconCls: 'blist',disabled:false,handler:this.text_func,tooltip: '<b>test action</b><br/>Sinc '});
-
+       // this.addButton('testb',{text:'test',iconCls: 'blist',disabled:false,handler:this.text_func,tooltip: '<b>test action</b><br/>Sinc '});
+		//26.06.2019: Se comenta la adicion de boton porque no hace nada, se consulto con Rodrigo para comentar 
         
    		
    		

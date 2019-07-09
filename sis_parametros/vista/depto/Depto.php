@@ -29,13 +29,13 @@ header("content-type: text/javascript; charset=UTF-8");
 				})
 			}
 
-			this.addButton('addPlantilla', {
+			/*this.addButton('addPlantilla', {
 				text : 'addPlantilla',
 				iconCls : 'bundo',
 				disabled : false,
 				handler : this.addPlantilla,
 				tooltip : ' <b>Agrega Plantilla</b>plantilla word'
-			});
+			});*///26.06.2019 previa coordinacion de RCM no hace nada el boton
 
 		},
 		/*east:{

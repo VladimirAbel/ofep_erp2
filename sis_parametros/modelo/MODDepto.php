@@ -92,7 +92,7 @@ class MODDepto extends MODbase{
 		
 		//Ejecuta la funcion
 		$this->armarConsulta();
-		
+		//echo ''.$this->getConsulta(); exit;
 		$this->ejecutarConsulta();
 		return $this->respuesta;
 

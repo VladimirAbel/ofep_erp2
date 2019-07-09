@@ -158,8 +158,8 @@ Phx.vista.TipoCcArb=Ext.extend(Phx.arbGridInterfaz,{
 		{
 			config:{
 				name: 'control_techo',
-				qtip:'Si es Techo el presupuestario  se valida a este nivel',
-				fieldLabel: 'Techo Presupeustario',
+				qtip:'Si es Techo presupuestario  se valida a este nivel',
+				fieldLabel: 'Techo Presupuestario',
 				allowBlank: false,
 				anchor: '80%',
 				gwidth: 70,
@@ -182,7 +182,7 @@ Phx.vista.TipoCcArb=Ext.extend(Phx.arbGridInterfaz,{
 			config:{
 				name: 'control_partida',
 				qtip:'Controlar el presupesuto por partidas',
-				fieldLabel: 'Controlar Partida',
+				fieldLabel: 'Controlar x Partida',
 				allowBlank: false,  
 				anchor: '80%', 
 				gwidth: 70,   			
@@ -225,7 +225,7 @@ Phx.vista.TipoCcArb=Ext.extend(Phx.arbGridInterfaz,{
 		{
 			config:{
 				name: 'mov_pres',
-				qtip:'Si el presupeusto es de ignreso o egreso o ambos',
+				qtip:'Si el presupuesto es de ingreso/egreso o ambos',
 				fieldLabel: 'Ingreso / Egreso',
 				anchor: '80%',
 				gwidth: 120,
@@ -321,7 +321,7 @@ Phx.vista.TipoCcArb=Ext.extend(Phx.arbGridInterfaz,{
 	],
 	
 
-	title:'Ordenes',
+	title:'Tipo Centro de Costo',
 	ActSave:'../../sis_parametros/control/TipoCc/insertarTipoCcArb',
 	ActDel:'../../sis_parametros/control/TipoCc/eliminarTipoCcArb',
 	ActList:'../../sis_parametros/control/TipoCc/listarTipoCcArb',

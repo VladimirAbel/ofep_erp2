@@ -170,7 +170,7 @@ Phx.vista.Grupo=Ext.extend(Phx.gridInterfaz,{
     tabeast:[
         {
             url:'../../../sis_parametros/vista/grupo_ep/GrupoEp.php',
-            title:'Roles',
+            title:'Grupo EP',
             width:400,
             cls:'GrupoEp'
         },
