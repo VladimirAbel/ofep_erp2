@@ -134,11 +134,12 @@ Phx.vista.Catalogo=Ext.extend(Phx.gridInterfaz,{
 			type: 'ComboBox',
 			id_grupo: 1,
 			filters: {
-				pfiltro: 'nombre',
+				pfiltro: 'cattip.nombre',
 				type: 'string'
 			},
 			grid: true,
-			form: true
+			form: true,
+			bottom_filter: true
 		},
 		
 		{
@@ -154,7 +155,8 @@ Phx.vista.Catalogo=Ext.extend(Phx.gridInterfaz,{
             filters:{pfiltro:'cat.codigo',type:'string'},
             id_grupo:1,
             grid:true,
-            form:true
+            form:true,
+	    bottom_filter: true
         },
 		{
 			config:{
@@ -169,7 +171,8 @@ Phx.vista.Catalogo=Ext.extend(Phx.gridInterfaz,{
 			filters:{pfiltro:'cat.descripcion',type:'string'},
 			id_grupo:1,
 			grid:true,
-			form:true
+			form:true,
+			bottom_filter: true
 		},		
 		{
 			config:{
