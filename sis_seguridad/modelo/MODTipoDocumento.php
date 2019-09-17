@@ -28,7 +28,7 @@ class MODTipoDocumento extends MODbase{
 		$this->captura('id_tipo_documento','integer');
 		$this->captura('nombre','varchar');
 		$this->captura('fecha_reg','date');
-		$this->captura('estado_reg','pxp.estado_reg');
+		$this->captura('estado_reg','varchar');
 				
 					
 		$this->armarConsulta();
@@ -45,11 +45,11 @@ class MODTipoDocumento extends MODbase{
 		$this->transaccion='SEG_TIPODOC_INS';//nombre de la transaccion
 		$this->tipo_procedimiento='IME';//tipo de transaccion
 		
-		$this->setParametro('id_tipo_documento','integer');
-		$this->setParametro('nombre','varchar');
-		$this->setParametro('fecha_reg','date');
-		$this->setParametro('estado_reg','segu.activo_inactivo');
-		
+		$this->setParametro('id_tipo_documento', 'id_tipo_documento','integer');
+		$this->setParametro('nombre', 'nombre','varchar');
+		$this->setParametro('fecha_reg', 'fecha_reg','date');
+		$this->setParametro('estado_reg', 'estado_reg','segu.activo_inactivo');
+
 		//Ejecuta la instruccion
 		$this->armarConsulta();
 		
@@ -63,10 +63,10 @@ class MODTipoDocumento extends MODbase{
 		$this->transaccion='SEG_TIPODOC_MOD';//nombre de la transaccion
 		$this->tipo_procedimiento='IME';//tipo de transaccion
 		
-		$this->setParametro('id_tipo_documento','integer');
-		$this->setParametro('nombre','varchar');
-		$this->setParametro('fecha_reg','date');
-		$this->setParametro('estado_reg','segu.activo_inactivo');
+		$this->setParametro('id_tipo_documento', 'id_tipo_documento','integer');
+		$this->setParametro('nombre', 'nombre','varchar');
+		$this->setParametro('fecha_reg', 'fecha_reg','date');
+		$this->setParametro('estado_reg', 'estado_reg','VARCHAR');
 		
 		//Ejecuta la instruccion
 		$this->armarConsulta();

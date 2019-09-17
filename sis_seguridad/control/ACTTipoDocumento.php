@@ -31,20 +31,19 @@ class ACTTipoDocumento extends ACTbase{
 	}
 	
 	function guardarTipoDocumento(){
-	
+
 		//crea el objetoFunSeguridad que contiene todos los metodos del sistema de seguridad
 		$this->objFunSeguridad=$this->create('MODTipoDocumento');
 		
 		//preguntamos si se debe insertar o modificar 
 		if($this->objParam->insertar('id_tipo_documento')){
-
 			//ejecuta el metodo de insertar de la clase MODPersona a travez 
 			//de la intefaz objetoFunSeguridad 
 			$this->res=$this->objFunSeguridad->insertarTipoDocumento($this->objParam);			
 		}
 		else{	
 			//ejecuta el metodo de modificar persona de la clase MODPersona a travez 
-			//de la intefaz objetoFunSeguridad 
+            //de la intefaz objetoFunSeguridad 
 			$this->res=$this->objFunSeguridad->modificarTipoDocumento($this->objParam);
 		}
 		
