@@ -256,6 +256,7 @@
 		$this->armarConsulta();
 				
 		$this->ejecutarConsulta();
+		echo $this->getConsulta(); exit;
 		return $this->respuesta;
 	}
 

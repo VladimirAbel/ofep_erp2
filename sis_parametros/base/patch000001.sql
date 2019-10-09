@@ -2473,3 +2473,36 @@ CREATE TABLE param.ttipo_concepto_ingas (
 WITH (oids = false);
 /***********************************F-SCP-EGS-PARAM-3-04/06/2019*****************************************/
 
+
+
+/***********************************I-SCP-MZM-PARAM-0-22/08/2019*****************************************/
+
+CREATE TABLE param.ttaza_impuesto (
+  id_taza_impuesto INTEGER DEFAULT nextval('param.ttazas_impuesto_id_taza_impuesto_seq'::regclass) NOT NULL, 
+  descripcion VARCHAR(255), 
+  observacion VARCHAR(255), 
+  factor_impuesto NUMERIC, 
+  tipo VARCHAR(15), 
+  factor_impuesto_pre NUMERIC, 
+  CONSTRAINT ttazas_impuesto_pkey PRIMARY KEY(id_taza_impuesto)
+) INHERITS (pxp.tbase)
+WITHOUT OIDS;
+
+COMMENT ON COLUMN param.ttaza_impuesto.tipo
+IS 'es de tipo nominal o efectivo';
+
+
+ALTER TABLE param.tconcepto_ingas
+  ADD COLUMN id_taza_impuesto INTEGER;
+
+ALTER TABLE param.tconcepto_ingas
+  ADD CONSTRAINT tconcepto_ingas_fk FOREIGN KEY (id_taza_impuesto)
+    REFERENCES param.ttaza_impuesto(id_taza_impuesto)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+    NOT DEFERRABLE;
+    
+/***********************************F-SCP-MZM-PARAM-0-22/08/2019*****************************************/    
+    
+    
+    
