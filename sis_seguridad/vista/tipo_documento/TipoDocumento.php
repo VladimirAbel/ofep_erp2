@@ -81,7 +81,7 @@ Phx.vista.tipo_documento=Ext.extend(Phx.gridInterfaz,{
 	ActList:'../../sis_seguridad/control/TipoDocumento/listarTipoDocumento',
 	id_store:'id_tipo_documento',
 	fields: [
-	{name:'id_persona'},
+	{name:'id_tipo_documento'},
 	{name:'nombre', type: 'string'},
 	{name:'fecha_reg', type: 'date'},
 	{name:'estado_reg', type: 'segu.activo_inactivo'},
