@@ -2504,5 +2504,23 @@ ALTER TABLE param.tconcepto_ingas
     
 /***********************************F-SCP-MZM-PARAM-0-22/08/2019*****************************************/    
     
+/***********************************I-SCP-MZM-PARAM-0-04/12/2019*****************************************/
+
+INSERT INTO param.tplantilla_archivo_excel ("id_usuario_reg", "id_usuario_mod", "fecha_reg", "fecha_mod", "estado_reg", "id_usuario_ai", "usuario_ai", "id_plantilla_archivo_excel", "nombre", "codigo", "hoja_excel", "fila_inicio", "fila_fin", "filas_excluidas", "tipo_archivo", "delimitador")
+VALUES
+  (1, NULL, E'2018-01-14 14:00:41.279', NULL, E'activo', NULL, E'NULL', 1, E'ImpTransacciones Con', E'IMPTRACON', NULL, 2, NULL, NULL, E'xlsx', E'');
+
+INSERT INTO param.tcolumnas_archivo_excel ("id_usuario_reg", "id_usuario_mod", "fecha_reg", "fecha_mod", "estado_reg", "id_usuario_ai", "usuario_ai", "id_columna_archivo_excel", "id_plantilla_archivo_excel", "nombre_columna", "numero_columna", "tipo_valor", "sw_legible", "formato_fecha", "anio_fecha", "nombre_columna_tabla", "punto_decimal", "codigo", "codigo_plantilla")
+VALUES
+  (1, 1, E'2018-01-14 14:08:19.441', E'2018-01-14 17:38:28.147', E'activo', NULL, E'NULL', 1, 1, E'centro costo', 1, E'string', E'si', E'', NULL, E'centro_costo', E'', E'COD1', E'IMPTRACON'),
+  (1, NULL, E'2018-01-14 14:08:52.027', NULL, E'activo', NULL, E'NULL', 2, 1, E'partida', 2, E'string', E'si', E'', NULL, E'partida', E'', E'COD2', E'IMPTRACON'),
+  (1, NULL, E'2018-01-14 14:09:10.745', NULL, E'activo', NULL, E'NULL', 3, 1, E'cuenta', 3, E'string', E'si', E'', NULL, E'cuenta', E'', E'COD3', E'IMPTRACON'),
+  (1, NULL, E'2018-01-14 14:09:51.913', NULL, E'activo', NULL, E'NULL', 4, 1, E'auxiliar', 4, E'string', E'si', E'', NULL, E'auxiliar', E'', E'COD4', E'IMPTRACON'),
+  (1, NULL, E'2018-01-14 14:10:28.709', NULL, E'activo', NULL, E'NULL', 5, 1, E'orden', 5, E'string', E'si', E'', NULL, E'orden', E'', E'COD5', E'IMPTRACON'),
+  (1, NULL, E'2018-01-14 14:11:31.915', NULL, E'activo', NULL, E'NULL', 6, 1, E'suborden', 6, E'string', E'si', E'', NULL, E'suborden', E'', E'COD6', E'IMPTRACON'),
+  (1, 429, E'2018-01-14 14:14:31.073', E'2018-01-16 17:33:04.295', E'activo', NULL, E'NULL', 7, 1, E'debe', 7, E'numeric', E'si', E'', NULL, E'debe', E'.', E'COD7', E'IMPTRACON'),
+  (1, 429, E'2018-01-14 14:14:53.012', E'2018-01-16 17:33:08.990', E'activo', NULL, E'NULL', 8, 1, E'haber', 8, E'numeric', E'si', E'', NULL, E'haber', E'.', E'COD8', E'IMPTRACON'),
+  (1, 429, E'2018-01-14 14:15:10.814', E'2018-01-16 17:32:42.174', E'activo', NULL, E'NULL', 9, 1, E'glosa', 9, E'string', E'si', E'', NULL, E'glosa', E'', E'COD9', E'IMPTRACON');
     
+/***********************************F-SCP-MZM-PARAM-0-04/12/2019*****************************************/    
     
