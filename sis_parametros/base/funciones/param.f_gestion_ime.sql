@@ -68,7 +68,10 @@ BEGIN
             		where gestion = v_parametros.gestion) THEN
               raise exception 'Gestión existente';
             end if;
-           
+
+            v_fecha_ini_quin_aux=to_date(v_parametros.gestion || '-01-01','YYYY-MM-DD');
+            v_fecha_fin_quin_aux=to_date(v_parametros.gestion || '-12-31','YYYY-MM-DD');
+
         	--(2) Sentencia de la insercion
         	insert into param.tgestion(
 			id_moneda_base,
@@ -80,7 +83,9 @@ BEGIN
 			id_usuario_reg,
 			id_usuario_mod,
 			fecha_mod,
-            tipo
+            tipo,
+            fecha_ini,
+        	fecha_fin
           	) values(
 			v_parametros.id_moneda_base,
 			v_parametros.id_empresa,
@@ -91,7 +96,9 @@ BEGIN
 			p_id_usuario,
 			null,
 			null,
-            v_parametros.tipo
+            v_parametros.tipo,
+            v_fecha_ini_quin_aux,
+            v_fecha_fin_quin_aux
 			) returning id_gestion into v_id_gestion;
             
             --(3) Generación de los Períodos y Períodos Subsistema
@@ -263,6 +270,8 @@ BEGIN
 	elsif(p_transaccion='PM_GES_MOD')then
 
 		begin
+		    v_fecha_ini_quin_aux=to_date(v_parametros.gestion || '-01-01','YYYY-MM-DD');
+            v_fecha_fin_quin_aux=to_date(v_parametros.gestion || '-12-31','YYYY-MM-DD');
 			--Sentencia de la modificacion
 			update param.tgestion set
 			id_moneda_base = v_parametros.id_moneda_base,
@@ -271,7 +280,9 @@ BEGIN
 			gestion = v_parametros.gestion,
 			id_usuario_mod = p_id_usuario,
 			fecha_mod = now(),
-            tipo = v_parametros.tipo
+            tipo = v_parametros.tipo,
+            fecha_ini = v_fecha_ini_quin_aux,
+        	fecha_fin = v_fecha_fin_quin_aux
 			where id_gestion=v_parametros.id_gestion;
                
 			--Definicion de la respuesta

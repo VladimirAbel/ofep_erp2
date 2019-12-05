@@ -318,7 +318,19 @@ Phx.vista.Gestion=Ext.extend(Phx.gridInterfaz,{
 		var tb = Phx.vista.Gestion.superclass.liberaMenu.call(this);
 		this.getBoton('btnSincPeriodoSubsis').setDisabled(true);
 		return tb;
-	}
+	},
+    onButtonEdit:function(){//con estas modificaciones, se bloquea la edición de mes o quincenal
+        this.register='update';
+        datos=this.sm.getSelected().data;
+        Phx.vista.Gestion.superclass.onButtonEdit.call(this); //sobrecarga enable select
+        this.getComponente('tipo').disable();
+
+    },
+    onButtonNew:function(){//con estas modificaciones, se bloquea la edición de mes o quincenal
+        Phx.vista.Gestion.superclass.onButtonNew.call(this);
+        this.getComponente('tipo').enable();
+    }
+
 })
 </script>
 		
