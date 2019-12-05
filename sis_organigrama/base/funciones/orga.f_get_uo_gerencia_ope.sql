@@ -33,7 +33,7 @@ BEGIN
         	on ni.id_nivel_organizacional = uo.id_nivel_organizacional
         where euo.id_uo_hijo = par_id_uo;
         
-        if (v_nivel in (1,2)) then
+        if (v_nivel is not null) then
         	return par_id_uo;
         else
         	if (v_id_uo = v_id_uo_hijo) then
