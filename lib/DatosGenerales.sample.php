@@ -127,10 +127,10 @@
 
 	//--------------- TITULOS ----------------------------------//
 	
-	$_SESSION['_TITULO_SIS_LARGO']="FRAMEWORK PARA DESARROLLO DE SOFTWARE";
-	$_SESSION['_TITULO_SIS_CORTO']=" DESARROLLO ÁGIL";
-	$_SESSION['_NOMBRE_SIS']="PXP";
-	$_SESSION['_REP_NOMBRE_SISTEMA']='GEMA - Gestión de Mantenimiento';
+	$_SESSION['_TITULO_SIS_LARGO']="";
+	$_SESSION['_TITULO_SIS_CORTO']="";
+	$_SESSION['_NOMBRE_SIS']="";
+	$_SESSION['_REP_NOMBRE_SISTEMA']='';
  	
 	
 	  $_SESSION['_PLANTIILA']= "<tr height=\"20%\">
@@ -150,17 +150,17 @@
 	//Tiene que ser una imagen que pueda ser bien vista a un tamaño de 35*15
 	//$_SESSION['dir_logo']='../../images/logo_reporte.jpg'; 
 	
-	$_SESSION['_DIR_FAV_ICON']='../../../lib/images/favicon.ico';
+	$_SESSION['_DIR_FAV_ICON']='../../../lib/imagenes/icon_ofep.png';
 	  
 	$_SESSION['_DIR_LOGO']='/imagenes/logos/logo.png'; 
 	
-	$_SESSION['_MINI_LOGO']='../../../lib/imagenes/kplian2.jpg';
+	$_SESSION['_MINI_LOGO']='../../../lib/imagenes/logosm.png';
 	
 	$_SESSION['_DIR_IMAGEN_INI']='../../../lib/imagenes/fondo_ini.jpg';
 	
 	$_SESSION['_DIR_FABICON']='../../images/logo_reporte.jpg';
 	
-	$_SESSION['_DIR_BACKGROUND_LOGIN']='../../../recursos/imagenes/Logo.png';
+	$_SESSION['_DIR_BACKGROUND_LOGIN']='../../../lib/imagenes/erp.png';
 	
 	//-----------------CORREO ELECTRONICO----------------------//
     
