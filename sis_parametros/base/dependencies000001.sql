@@ -1412,6 +1412,7 @@ select pxp.f_insert_testructura_gui ('SERVIC', 'OTROS');
 select pxp.f_insert_testructura_gui ('COMAL', 'ALRMS');
 select pxp.f_insert_testructura_gui ('CONFLECT', 'OTROS');
 select pxp.f_insert_testructura_gui ('TIPOAR', 'OTROS');
+select pxp.f_insert_testructura_gui ('VARG', 'PARAM');
 select pxp.f_insert_testructura_gui ('TIPCC', 'CEP');
 select pxp.f_insert_testructura_gui ('TCC', 'CEP');
 select pxp.f_insert_testructura_gui ('WSME', 'ALRMS');

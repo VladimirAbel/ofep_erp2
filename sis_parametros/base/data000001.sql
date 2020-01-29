@@ -300,6 +300,7 @@ select pxp.f_insert_tgui ('Alarmas', 'Alarmas', 'ALRMS', 'si', 3, '', 2, '', '',
 select pxp.f_insert_tgui ('Empresa', 'Empresa', 'EMPS', 'si', 1, '', 2, '', '', 'PARAM');
 select pxp.f_insert_tgui ('Catalogos', 'Catalogos', 'CTLGS', 'si', 2, '', 2, '', '', 'PARAM');
 select pxp.f_insert_tgui ('Otros', 'Otros', 'OTROS', 'si', 50, '', 2, '', '', 'PARAM');
+select pxp.f_insert_tgui ('Variables Globales', 'Variables Globales', 'VARG', 'si', 51, 'sis_parametros/vista/variable_global/VariableGlobal.php', 2, '', 'VariableGlobal', 'PARAM');
 select pxp.f_insert_tgui ('Comunicados', 'registro de comunicados ', 'COMAL', 'si', 1, 'sis_parametros/vista/alarma/Comunicado.php', 3, '', 'Comunicado', 'PARAM');
 select pxp.f_insert_tgui ('Widget', 'Widget para dashboard', 'WIDGET', 'si', 10, 'sis_parametros/vista/widget/WidgetConfig.php', 3, '', 'WidgetConfig', 'PARAM');
 select pxp.f_insert_tgui ('Archivos Excel', 'Archivos Excel', 'ARXLS', 'si', 10, 'sis_parametros/vista/plantilla_archivo_excel/PlantillaArchivoExcel.php', 3, '', 'PlantillaArchivoExcel', 'PARAM');
@@ -485,8 +486,7 @@ select pxp.f_insert_tgui ('Archivo', 'Archivo', 'PROVINI.1.1.2.1.2', 'no', 0, 's
 select pxp.f_insert_tgui ('Interfaces', 'Interfaces', 'PROVINI.1.1.2.1.2.1', 'no', 0, 'sis_parametros/vista/archivo/upload.php', 10, '', 'subirArchivo', 'PARAM');
 select pxp.f_insert_tgui ('ArchivoHistorico', 'ArchivoHistorico', 'PROVINI.1.1.2.1.2.2', 'no', 0, 'sis_parametros/vista/archivo/ArchivoHistorico.php', 10, '', 'ArchivoHistorico', 'PARAM');
 select pxp.f_insert_tgui ('Archivo', 'Archivo', 'PROVINI.5.1.4', 'no', 0, 'sis_parametros/vista/archivo/Archivo.php', 7, '', 'Archivo', 'PARAM');
-select pxp.f_insert_tgui ('Plantilla Tipo Centro de Costo', 'Plantilla Tipo de Centro de Costo', 'PTIPCC', 'si', 15, 'sis_parametros/vista/tipo_cc_plantilla/TipoCcArbPlantilla.php', 3, '', 'TipoCcArbPlantilla', 'PARAM');
-
+select pxp.f_insert_tgui ('Plantilla Tipo Centro de Costo', 'Plantilla Tipo de Centro de Costo', 'PTIPCC', 'si', 15, 'sis_parametros/vista/tipo_cc_plantilla/TipoCcArbPlantilla.php', 3, '', 'TipoCcArbPlantilla', 'PARAM');	
 
 
 /***********************************F-DAT-RCM-PARAM-1-27/10/2017*****************************************/
